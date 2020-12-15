@@ -24,6 +24,7 @@ class FastBootAppServer {
     this.beforeMiddleware = options.beforeMiddleware;
     this.afterMiddleware = options.afterMiddleware;
     this.buildSandboxGlobals = options.buildSandboxGlobals;
+    this.buildSandboxPerVisit = options.buildSandboxPerVisit;
     this.chunkedResponse = options.chunkedResponse;
 
     if (!this.ui) {
@@ -47,6 +48,7 @@ class FastBootAppServer {
         beforeMiddleware: this.beforeMiddleware,
         afterMiddleware: this.afterMiddleware,
         buildSandboxGlobals: this.buildSandboxGlobals,
+        buildSandboxPerVisit: this.buildSandboxPerVisit,
         chunkedResponse: this.chunkedResponse,
       });
 

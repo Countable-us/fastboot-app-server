@@ -18,6 +18,7 @@ class Worker {
     this.beforeMiddleware = options.beforeMiddleware;
     this.afterMiddleware = options.afterMiddleware;
     this.buildSandboxGlobals = options.buildSandboxGlobals;
+    this.buildSandboxPerVisit = options.buildSandboxPerVisit;
     this.chunkedResponse = options.chunkedResponse;
 
     if (!this.httpServer) {
@@ -80,6 +81,9 @@ class Worker {
     return fastbootMiddleware({
       fastboot: this.fastboot,
       chunkedResponse: this.chunkedResponse,
+      visitOptions: {
+        buildSandboxPerVisit: this.buildSandboxPerVisit
+      },
     });
   }
 
