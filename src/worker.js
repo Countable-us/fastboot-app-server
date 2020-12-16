@@ -19,6 +19,7 @@ class Worker {
     this.afterMiddleware = options.afterMiddleware;
     this.buildSandboxGlobals = options.buildSandboxGlobals;
     this.buildSandboxPerVisit = options.buildSandboxPerVisit;
+    this.maxSandboxQueueSize = options.maxSandboxQueueSize;
     this.chunkedResponse = options.chunkedResponse;
 
     if (!this.httpServer) {
@@ -76,6 +77,7 @@ class Worker {
     this.fastboot = new FastBoot({
       distPath: this.distPath,
       buildSandboxGlobals: this.buildSandboxGlobals,
+      maxSandboxQueueSize: this.maxSandboxQueueSize,
     });
 
     return fastbootMiddleware({
